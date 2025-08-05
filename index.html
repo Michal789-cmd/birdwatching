@@ -81,9 +81,11 @@
       }
     }
 
-    .ticker-container:hover .ticker-inner {
-      animation-play-state: paused;
-    }
+    @media (hover: hover) and (pointer: fine) {
+  .ticker-container:hover .ticker-inner {
+    animation-play-state: paused;
+  }
+}
 
     @media (max-width: 600px) {
       .ticker-container {
@@ -126,6 +128,7 @@
   </div>
 </body>
 </html>
+
 
 
 
