@@ -21,6 +21,71 @@
       height: 100%;
       border: none;
     }
+
+    /* TICKER */
+    .ticker-container {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #002f5f;
+      border-top: 3px solid #005bbf;
+      color: #ffffff;
+      font-family: 'Arial', sans-serif;
+      font-size: 16px;
+      overflow: hidden;
+      z-index: 9999;
+    }
+
+    .ticker-inner {
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+      animation: scroll-left 25s linear infinite;
+    }
+
+    .ticker-label {
+      background-color: #005bbf;
+      padding: 0.4rem 1rem;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+
+    .ticker-text {
+      display: inline-block;
+      padding-left: 2rem;
+    }
+
+    .ticker-text span {
+      padding-right: 2rem;
+    }
+
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    /* Hover = pozastavení */
+    .ticker-container:hover .ticker-inner {
+      animation-play-state: paused;
+    }
+
+    /* Mobilní zařízení */
+    @media (max-width: 600px) {
+      .ticker-container {
+        font-size: 14px;
+      }
+      .ticker-label {
+        font-size: 14px;
+        padding: 0.3rem 0.8rem;
+      }
+      .ticker-text span {
+        padding-right: 1.2rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -29,6 +94,19 @@
     <iframe src="https://www.youtube.com/embed/4kRzwJXaeIM" allowfullscreen></iframe>
     <iframe src="https://www.youtube.com/embed/abbR-Ttd-cA" allowfullscreen></iframe>
     <iframe src="https://www.youtube.com/embed/73-EekdVVU8" allowfullscreen></iframe>
+  </div>
+
+  <!-- Ticker -->
+  <div class="ticker-container">
+    <div class="ticker-inner">
+      <div class="ticker-label">INFO</div>
+      <div class="ticker-text">
+        <span> Vítejte na webu Birdwatching. Vybíráme pro vás relaxační zvířecí streamy z youtube. </span>
+        <span> Navštivte jedinečný pekelný e-shop <a href="https://pekloonline.cz/doprava" target="_blank">Pekloonline.cz </a></span>
+        <span> Zrelaxovat se můžete také u dechových cvičení <a href="https://michal789-cmd.github.io/box-breathing/" target="_blank">zde </a></span>
+        <span>Pro více informací k videím navštivte originálí streamy na youtube. </span>
+      </div>
+    </div>
   </div>
 </body>
 </html>
