@@ -9,6 +9,7 @@
       padding: 0;
       height: 100%;
     }
+
     .grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -16,6 +17,7 @@
       width: 100vw;
       height: 100vh;
     }
+
     iframe {
       width: 100%;
       height: 100%;
@@ -27,36 +29,46 @@
       position: fixed;
       bottom: 0;
       width: 100%;
-      background-color: #002f5f;
-      border-top: 3px solid #005bbf;
+      background-color: rgba(0, 47, 95, 0.85); /* poloprůhledné pozadí */
+      border-top: 2px solid #3399ff;
       color: #ffffff;
       font-family: 'Arial', sans-serif;
-      font-size: 16px;
+      font-size: 15px;
       overflow: hidden;
       z-index: 9999;
+      height: 30px;
     }
 
     .ticker-inner {
       display: flex;
       align-items: center;
       white-space: nowrap;
-      animation: scroll-left 25s linear infinite;
+      animation: scroll-left 60s linear infinite; /* pomalejší posun */
     }
 
     .ticker-label {
       background-color: #005bbf;
-      padding: 0.4rem 1rem;
+      padding: 0.2rem 0.8rem;
       font-weight: bold;
       flex-shrink: 0;
     }
 
     .ticker-text {
       display: inline-block;
-      padding-left: 2rem;
+      padding-left: 1rem;
     }
 
     .ticker-text span {
       padding-right: 2rem;
+    }
+
+    .ticker-text a {
+      color: #aad4ff;
+      text-decoration: underline;
+    }
+
+    .ticker-text a:hover {
+      color: #ffffff;
     }
 
     @keyframes scroll-left {
@@ -68,22 +80,23 @@
       }
     }
 
-    /* Hover = pozastavení */
     .ticker-container:hover .ticker-inner {
       animation-play-state: paused;
     }
 
-    /* Mobilní zařízení */
     @media (max-width: 600px) {
       .ticker-container {
-        font-size: 14px;
+        font-size: 13px;
+        height: 28px;
       }
+
       .ticker-label {
-        font-size: 14px;
-        padding: 0.3rem 0.8rem;
+        font-size: 13px;
+        padding: 0.2rem 0.6rem;
       }
+
       .ticker-text span {
-        padding-right: 1.2rem;
+        padding-right: 1rem;
       }
     }
   </style>
@@ -101,10 +114,10 @@
     <div class="ticker-inner">
       <div class="ticker-label">INFO</div>
       <div class="ticker-text">
-        <span> Vítejte na webu Birdwatching. Vybíráme pro vás relaxační zvířecí streamy z youtube. </span>
-        <span> Navštivte jedinečný pekelný e-shop <a href="https://pekloonline.cz/doprava" target="_blank">Pekloonline.cz </a></span>
-        <span> Zrelaxovat se můžete také u dechových cvičení <a href="https://michal789-cmd.github.io/box-breathing/" target="_blank">zde </a></span>
-        <span>Pro více informací k videím navštivte originálí streamy na youtube. </span>
+        <span>| Vítejte na webu Birdwatching. Vybíráme pro vás relaxační zvířecí streamy z YouTube.</span>
+        <span>| Navštivte jedinečný pekelný e-shop <a href="https://pekloonline.cz/doprava" target="_blank">Pekloonline.cz</a></span>
+        <span>| Zrelaxovat se můžete také u dechových cvičení <a href="https://michal789-cmd.github.io/box-breathing/" target="_blank">zde</a></span>
+        <span>| Pro více informací k videím navštivte originální streamy na YouTube.</span>
       </div>
     </div>
   </div>
